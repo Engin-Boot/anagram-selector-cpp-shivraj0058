@@ -12,12 +12,11 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
     }
     string s1 = word1;
     string s2 = word2;
-    s1.erase(
-        remove_if(s1.begin(), s1.end(), static_cast<int(*)(int)>(isspace)),
-        s1.end());
-    s2.erase(
-        remove_if(s2.begin(), s2.end(), static_cast<int(*)(int)>(isspace)),
-        s2.end());
+    s1.erase(remove_if(s1.begin(), s1.end(),
+        [](char s) { return !isalpha(s); }), s1.end());
+
+    s2.erase(remove_if(s2.begin(), s2.end(),
+        [](char s) { return !isalpha(s); }), s2.end());
     sort(s1.begin(), s1.end());
     sort(s2.begin(), s2.end());
     if (s1 == s2)
