@@ -12,8 +12,16 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
     }
     string s1 = word1;
     string s2 = word2;
-    remove_if(s1.begin(), s1.end(), ' ');
-    remove_if(s2.begin(), s2.end(), ' ');
+    //remove_if(s1.begin(), s1.end(), ' ');
+    //remove_if(s2.begin(), s2.end(), ' ');
+    s1.erase(std::remove_if(
+        begin(s1), end(s1),
+        [l = std::locale{}](auto ch) { return std::isspace(ch, l); }
+    ), end(s1));
+    s2.erase(std::remove_if(
+        begin(s2), end(s2),
+        [l = std::locale{}](auto ch) { return std::isspace(ch, l); }
+    ), end(s1));
     sort(s1.begin(), s1.end());
     sort(s2.begin(), s2.end());
     if (s1 == s2)
@@ -35,3 +43,7 @@ std::vector<std::string> Anagram::SelectAnagrams(
     return Anagrams;
 }
 
+string Anagram::RemoveSpace(string s)
+{
+
+}
