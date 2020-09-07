@@ -13,10 +13,10 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
     string s1 = word1;
     string s2 = word2;
     s1.erase(remove_if(s1.begin(), s1.end(),
-        [](char s) { return !isalpha(s); }), s1.end());
+        [](char c) { return !isalpha(c); }), s1.end());
 
     s2.erase(remove_if(s2.begin(), s2.end(),
-        [](char s) { return !isalpha(s); }), s2.end());
+        [](char c) { return !isalpha(c); }), s2.end());
     transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
     transform(s2.begin(), s2.end(), s2.begin(), ::tolower);
     sort(s1.begin(), s1.end());
