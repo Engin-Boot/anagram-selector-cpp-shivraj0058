@@ -8,4 +8,5 @@ namespace Anagram
     std::vector<std::string> SelectAnagrams(
         const std::string& word,
         const std::vector<std::string>& candidates);
+    std::string RemoveSpace(const std::string& str);
 } // namespace Anagram
