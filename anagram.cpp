@@ -10,8 +10,8 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
     {
         return false;
     }
-    string s1 = Anagram::RemoveSpace(word1);
-    string s2 = Anagram::RemoveSpace(word2);
+    string s1 = RemoveSpace(word1);
+    string s2 = RemoveSpace(word2);
     sort(s1.begin(), s1.end());
     sort(s2.begin(), s2.end());
     if (s1 == s2)
