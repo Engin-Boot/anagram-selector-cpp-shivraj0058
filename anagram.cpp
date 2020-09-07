@@ -12,8 +12,8 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
     }
     string s1 = word1;
     string s2 = word2;
-    remove_if(s1.begin(), s1.end(), isspace);
-    remove_if(s2.begin(), s1.end(), isspace);
+    s1.erase(remove_if(s1.begin(), s1.end(),isspace),s1.end());
+    s2.erase(remove_if(s2.begin(), s2.end(), isspace), s2.end());
     sort(s1.begin(), s1.end());
     sort(s2.begin(), s2.end());
     if (s1 == s2)
