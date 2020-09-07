@@ -42,8 +42,3 @@ std::vector<std::string> Anagram::SelectAnagrams(
     }
     return Anagrams;
 }
-
-string Anagram::RemoveSpace(string s)
-{
-
-}
