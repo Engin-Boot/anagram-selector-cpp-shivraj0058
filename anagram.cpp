@@ -6,10 +6,6 @@
 using namespace std;
 
 bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& word2) {
-    if (word1.length() != word2.length())
-    {
-        return false;
-    }
     string s1 = word1;
     string s2 = word2;
     s1.erase(remove_if(s1.begin(), s1.end(),
@@ -17,6 +13,10 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
 
     s2.erase(remove_if(s2.begin(), s2.end(),
         [](char c) { return !isalpha(c); }), s2.end());
+    if (word1.length() != word2.length())
+    {
+        return false;
+    }
     transform(s1.begin(), s1.end(), s1.begin(), ::tolower);
     transform(s2.begin(), s2.end(), s2.begin(), ::tolower);
     sort(s1.begin(), s1.end());
