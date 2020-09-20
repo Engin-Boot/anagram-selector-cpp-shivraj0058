@@ -12,9 +12,9 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
     {
         return false;
     }
-    TransformString(s1);
-    TransformString(s2);
-    if (s1 == s2)
+    string s3=TransformString(s1);
+    string s4=TransformString(s2);
+    if (s3 == s4)
         return true;
     return false;
 }
